@@ -179,7 +179,7 @@ with tab1:
         img_path = Path(__file__).parent / ".." / "static" / "images" / "heart_anatomy.png"
         img_path = img_path.resolve()
         if img_path.exists():
-            st.image(str(img_path), caption="Major parts of the heart", use_container_width=True)
+            st.image(str(img_path), caption="Major parts of the heart", use_column_width=True)
         else:
             st.warning(f"Image not found at: {img_path}")
 
@@ -276,7 +276,7 @@ with tab2:
         df["target"].value_counts().plot(kind="bar", ax=ax1, color=["green", "red"])
         ax1.set_xticklabels(["Low Risk", "High Risk"], rotation=0)
         ax1.set_ylabel("Count")
-        st.pyplot(fig1, use_container_width=True)
+        st.pyplot(fig1, use_column_width=True)
 
     with col2:
         st.write("### Cholesterol vs Age")
@@ -285,7 +285,7 @@ with tab2:
         ax2.set_xlabel("Age")
         ax2.set_ylabel("Cholesterol")
         plt.colorbar(scatter, ax=ax2, label="Risk (0=Low, 1=High)", shrink=0.6)
-        st.pyplot(fig2, use_container_width=True)
+        st.pyplot(fig2, use_column_width=True)
 
 # ------------------- 💡 HEALTH TIPS TAB (REPLACE YOUR OLD BLOCK) -------------------
 # --- IMAGE HELPER FUNCTION ---
@@ -293,7 +293,7 @@ def show_image(img_name, caption=""):
     st.image(
         f"static/images/{img_name}",
         caption=caption,
-        use_container_width=True
+        use_column_width=True
     )
 
 # =============================
@@ -570,3 +570,4 @@ with tab3:
     """)
 
     st.success("🌟 A healthy heart means a healthier, happier you. Start today!")
+
