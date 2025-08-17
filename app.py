@@ -44,20 +44,3 @@ with right_col:
 if not st.session_state.logged_in:
     st.stop()
 
-# ----------------- MAIN APP -----------------
-tabs = st.tabs(["🏠 Dashboard", "🔍 Predict", "💡 Health Tips"])
-
-with tabs[0]:
-    st.header("🏠 Dashboard")
-    st.write("Welcome to your Heart Health Dashboard!")
-    # Dashboard content yahan add karein
-
-with tabs[1]:
-    st.header("🔍 Predict")
-    st.write("Heart disease prediction form goes here.")
-    # Predict tab content yahan add karein
-
-with tabs[2]:
-    st.header("💡 Health Tips")
-    st.write("All heart health tips go here.")
-    # Health Tips tab content yahan add karein
