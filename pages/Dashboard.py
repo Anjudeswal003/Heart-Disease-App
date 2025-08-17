@@ -314,7 +314,7 @@ with tab3:
     # Main title
     st.markdown("<h2 style='margin-top:0'>💡 How to Keep Your Heart Healthy</h2>", unsafe_allow_html=True)
     st.markdown(
-        "<p style='font-size:16px'>Practical, science-backed tips to protect your heart—food, fitness, sleep, stress, habits, and more. Save the suggested images in <code>static/images/</code> with the same names to show them here.</p>",
+        "<p style='font-size:16px'>Practical, science-backed tips to protect your heart—food, fitness, sleep, stress, habits, and more.</p>",
         unsafe_allow_html=True
     )
 
@@ -581,4 +581,5 @@ with tab3:
     """)
 
     st.success("🌟 A healthy heart means a healthier, happier you. Start today!")
+
 
