@@ -1,5 +1,11 @@
 import streamlit as st
 
+# ------------------ LOGIN CHECK ------------------
+if "logged_in" not in st.session_state or st.session_state.logged_in == False:
+    st.warning("⚠️ Please login first!")
+    st.stop()
+
+
 # ---------------- CSS Styling ----------------
 st.markdown("""
     <style>
@@ -581,5 +587,6 @@ with tab3:
     """)
 
     st.success("🌟 A healthy heart means a healthier, happier you. Start today!")
+
 
 
