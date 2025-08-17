@@ -1,9 +1,13 @@
 import streamlit as st
-from streamlit_extras.switch_page_button import switch_page
 
-st.set_page_config(page_title="Login | Heart Health", page_icon="❤", layout="wide")
+# ----------------- PAGE CONFIG -----------------
+st.set_page_config(
+    page_title="Login | Heart Health",
+    page_icon="❤",
+    layout="wide"
+)
 
-# Hide sidebar
+# ----------------- HIDE SIDEBAR -----------------
 st.markdown("""
 <style>
 [data-testid="stSidebar"] {display: none;}
@@ -11,11 +15,11 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Initialize session state
+# ----------------- SESSION STATE -----------------
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 
-# Layout
+# ----------------- LOGIN FORM -----------------
 left_col, right_col = st.columns([1, 1], gap="large")
 
 with left_col:
@@ -33,6 +37,27 @@ with right_col:
         if email == "admin@gmail.com" and password == "admin123":
             st.session_state.logged_in = True
             st.success("Login successful! 🎉")
-            switch_page("Dashboard")  # Open Dashboard page
         else:
             st.error("Invalid email or password ❌")
+
+# ----------------- STOP UNTIL LOGIN -----------------
+if not st.session_state.logged_in:
+    st.stop()
+
+# ----------------- MAIN APP -----------------
+tabs = st.tabs(["🏠 Dashboard", "🔍 Predict", "💡 Health Tips"])
+
+with tabs[0]:
+    st.header("🏠 Dashboard")
+    st.write("Welcome to your Heart Health Dashboard!")
+    # Dashboard content yahan add karein
+
+with tabs[1]:
+    st.header("🔍 Predict")
+    st.write("Heart disease prediction form goes here.")
+    # Predict tab content yahan add karein
+
+with tabs[2]:
+    st.header("💡 Health Tips")
+    st.write("All heart health tips go here.")
+    # Health Tips tab content yahan add karein
