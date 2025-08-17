@@ -250,7 +250,7 @@ with tab2:
             unsafe_allow_html=True
         )
 
-    # --- Analytics Section (Now inside tab2) ---
+    # --- Analytics Section ---
     st.markdown("---")
     st.subheader("📊 Prediction Analytics")
 
@@ -272,20 +272,21 @@ with tab2:
 
     with col1:
         st.write("### Risk Distribution")
-        fig1, ax1 = plt.subplots(figsize=(3,2))
+        fig1, ax1 = plt.subplots(figsize=(5,4))  # slightly bigger for clarity
         df["target"].value_counts().plot(kind="bar", ax=ax1, color=["green", "red"])
         ax1.set_xticklabels(["Low Risk", "High Risk"], rotation=0)
         ax1.set_ylabel("Count")
-        st.pyplot(fig1, use_column_width=True)
+        st.pyplot(fig1)  # removed use_column_width
 
     with col2:
         st.write("### Cholesterol vs Age")
-        fig2, ax2 = plt.subplots(figsize=(3,2))
+        fig2, ax2 = plt.subplots(figsize=(5,4))  # slightly bigger
         scatter = ax2.scatter(df["age"], df["chol"], c=df["target"], cmap="bwr", alpha=0.7)
         ax2.set_xlabel("Age")
         ax2.set_ylabel("Cholesterol")
         plt.colorbar(scatter, ax=ax2, label="Risk (0=Low, 1=High)", shrink=0.6)
-        st.pyplot(fig2, use_column_width=True)
+        st.pyplot(fig2)  # removed use_column_width
+
 
 # ------------------- 💡 HEALTH TIPS TAB (REPLACE YOUR OLD BLOCK) -------------------
 # --- IMAGE HELPER FUNCTION ---
@@ -580,3 +581,4 @@ with tab3:
     """)
 
     st.success("🌟 A healthy heart means a healthier, happier you. Start today!")
+
