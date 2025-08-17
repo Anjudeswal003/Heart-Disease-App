@@ -40,7 +40,5 @@ with right_col:
         else:
             st.error("Invalid email or password ❌")
 
-# ----------------- STOP UNTIL LOGIN -----------------
-if not st.session_state.logged_in:
-    st.stop()
+
 
