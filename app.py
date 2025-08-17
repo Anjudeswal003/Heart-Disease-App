@@ -40,3 +40,5 @@ with right_col:
             switch_page("Dashboard")  # ✅ Directly open Dashboard file
         else:
             st.error("Invalid email or password ❌")
+            
+
