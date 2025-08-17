@@ -1,4 +1,11 @@
 import streamlit as st
+from streamlit_extras.switch_page_button import switch_page
+
+# Agar login nahi hua toh wapas login page bhejo
+if "logged_in" not in st.session_state or not st.session_state.logged_in:
+    st.warning("⚠️ Please login first!")
+    switch_page("app")  # app.py ka filename (login page)
+
 
 # ------------------ LOGIN CHECK ------------------
 
