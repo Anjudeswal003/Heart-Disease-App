@@ -45,7 +45,8 @@ with right_col:
             st.success("Login successful! 🎉")
 
             # Directly open Dashboard page (no button, no link)
-            st.switch_page("Dashboard")
+            st.switch_page("Dashboard.py")
         else:
             st.error("Invalid email or password ❌")
+
 
