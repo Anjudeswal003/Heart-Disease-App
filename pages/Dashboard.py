@@ -297,6 +297,16 @@ def show_image(img_name, caption=""):
     )
 
 # =============================
+# ------------------- 💡 HEALTH TIPS TAB -------------------
+# --- IMAGE HELPER FUNCTION ---
+def show_image(img_name, caption=""):
+    st.image(
+        f"static/images/{img_name}",
+        caption=caption,
+        use_column_width=True
+    )
+
+# =============================
 # HEALTH TIPS TAB
 # =============================
 with tab3:
@@ -570,4 +580,3 @@ with tab3:
     """)
 
     st.success("🌟 A healthy heart means a healthier, happier you. Start today!")
-
