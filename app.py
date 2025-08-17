@@ -1,13 +1,13 @@
 import streamlit as st
+from streamlit_extras.switch_page_button import switch_page
 
-# ----------------- PAGE CONFIG -----------------
 st.set_page_config(
     page_title="Login | Heart Health",
     page_icon="❤",
     layout="wide"
 )
 
-# ----------------- HIDE SIDEBAR -----------------
+# Hide sidebar
 st.markdown("""
 <style>
 [data-testid="stSidebar"] {display: none;}
@@ -37,8 +37,6 @@ with right_col:
         if email == "admin@gmail.com" and password == "admin123":
             st.session_state.logged_in = True
             st.success("Login successful! 🎉")
+            switch_page("Dashboard")  # ✅ Directly open Dashboard file
         else:
             st.error("Invalid email or password ❌")
-
-
-
